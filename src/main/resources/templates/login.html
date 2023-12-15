@@ -1,21 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" xmlns:th="https://www.thymeleaf.org">
-    <title>Login to your account</title>
-    <link rel="stylesheet" th:href="@{style_createacc.css}">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
 </head>
 <body>
-    <div class="logform">
-        <h1>Login to your account</h1>
-        <form method="POST" th:action="@{/login}" id="loginForm">
-            <label for="username"></label>
-            <input type="text" name="username" id="username" placeholder="Username"><br>
-            <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Your Password"><br>
-            <input type="Submit" value="Submit" class="submit"><br>
-            <label class="signin">Need an account? &nbsp<a href="/register" class="signin"> Sign up</a></label>
-        </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid Email or Password</div>
+                </div>
+                <div th:if="${param.logout}">
+                    <div class="alert alert-success">You have been logged out.</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" role="form" th:action="@{/login}"
+                              class="form-horizontal">
+                            <div class="form-group mb-3">
+                                <label class="control-label"> Email address</label> <input type="text"
+                                                                                      id="emailAddress" name="emailAddress" class="form-control"
+                                                                                      placeholder="Enter email address" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="control-label"> Password</label> <input
+                                    type="password" id="password" name="password"
+                                    class="form-control" placeholder="Enter password" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

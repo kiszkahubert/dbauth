@@ -9,10 +9,10 @@ import lombok.Data;
 @Entity
 @Data
 public class User {
-    private String emailAddress;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userKey;
+    private String emailAddress;
     private String password;
     private String role;
 }
