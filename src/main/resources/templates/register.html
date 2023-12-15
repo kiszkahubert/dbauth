@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="https://www.thymeleaf.org">
+    <title>Create your Account</title>
+    <link rel="stylesheet" th:href="@{/style_createacc.css}">
+</head>
+<body>
+    <div class="regform">
+        <h1>Register your account</h1>
+        <form method="POST" th:action="@{/register}" id="registerForm">
+            <label for="username"></label>
+            <input type="text" name="email" id="username" placeholder="Email Address"><br>
+            <label for="password"></label>
+            <input type="password" name="password" id="password" placeholder="Your Password"><br>
+            <label for="confirm"></label>
+            <input type="password" name="confirm" id="confirm" placeholder="Repeat Your Password"><br>
+            <input type="Submit" value="submit" class = "submit"><br>
+            <label class="signin">Already have an account? &nbsp<a href="/login" class="signin"> Sign in</a></label>
+        </form>
+    </div>
+    </body>
+</html>
