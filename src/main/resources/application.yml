@@ -3,3 +3,8 @@ spring:
     url: jdbc:mysql://localhost:3306/users
     username: hubert
     password: hubert
+logging:
+    level:
+      org:
+        springframework:
+          security: TRACE
